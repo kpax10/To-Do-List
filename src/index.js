@@ -1,51 +1,50 @@
-function ProjectsArray() {
-  const _projects = [
-    {
-      projectName: 'Project 1'
-    }
-  ]
-  const getProjects = () => _projects
+// make a master project array
+const CreateProjectsList = () => {
+  const list = [];
+  const getList = () => list;
 
-  return { getProjects }
+  return { list, getList }
 }
 
-const projects = ProjectsArray()
-
-
+// make a class to create projects
 class Project {
-
   constructor(name) {
-    this.projectName = name;
+    this.name = name
+    this.list = []
   }
-
-  addProjectToArray() {
-    projects.getProjects().push(this)
+  addProjectToList() {
+    projectList.getList().push(this)
   }
 }
 
+// make a class to create to-dos
 class ToDo {
-  constructor(title, description, dueDate, priority, isCompleted) {
+  constructor(title, description, dueDate, priority) {
     this.title = title
     this.description = description
     this.dueDate = dueDate
     this.priority = priority
-    this.isCompleted = isCompleted
   }
 
   addToDoToProject(project) {
-    projects.getProjects()
+    project.list.push(this)
   }
 }
 
+// create master project array
+const projectList = CreateProjectsList();
 
+// create new project
+const proj1 = new Project('proj1');
 
-const project2 = new Project('Project 2')
-project2.addProjectToArray()
-console.log(projects.getProjects());
+// add project to master array
+proj1.addProjectToList()
 
-const project3 = new Project('Project3')
-project2.addProjectToArray();
-console.log(projects.getProjects());
+// add to do to project
+const todo1 = new ToDo('bla', 'bla', 'now', 'low')
+todo1.addToDoToProject(proj1)
 
-const toDo1 = new ToDo('new title', 'blah blah', '03/01/2023', 'low', true)
-console.log(toDo1);
+// console.log(projectList.getList());
+
+console.log(projectList.list[0].list[0].title)
+console.dir(projectList.list[0].list[0])
