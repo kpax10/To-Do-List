@@ -1,65 +1,43 @@
-import { ToDo, Project } from './classes';
 
-// create new project
-const proj1 = new Project('Project 1')
+// make a todo array
+const CreateToDoArray = () => {
+  const list = [];
+  const getList = () => list;
 
-// create a todo
-const toDo1 = new ToDo('Milk', 'Need milk for this week', '', 1)
+  return { list, getList }
+}
 
-// add the todo to the project
-toDo1.addToDoToProject(proj1)
+const toDoList = CreateToDoArray()
 
-console.log(proj1);
+// make a class to create to-dos
+class ToDo {
+  constructor(title, description, dueDate, priority) {
+    this.title = title
+    this.description = description
+    this.dueDate = dueDate
+    this.priority = priority
+  }
+  addToDo() {
+    toDoList.list.push(this)
+  }
+  deleteToDo(toDo) {
+    toDoList.list.splice(toDoList.list.indexOf(toDo), 1)
+  }
+}
 
+// create todo array
+// const todoList = CreateToDoArray();
 
+// add to do to project
+const toDo1 = new ToDo('bla', 'bla', 'now', 'low')
+toDo1.addToDo()
 
-// // make a master project array
-// const CreateProjectsList = () => {
-//   const list = [];
-//   const getList = () => list;
+const toDo2 = new ToDo('wee', 'qoo', 'woo', 'high')
+toDo2.addToDo()
 
-//   return { list, getList }
-// }
+toDo1.deleteToDo(toDo1)
 
-// // make a class to create projects
-// class Project {
-//   constructor(name) {
-//     this.name = name
-//     this.list = []
-//   }
-//   addProjectToList() {
-//     projectList.getList().push(this)
-//   }
-// }
+const toDo3 = new ToDo('ya', 'yep', 'werw', 'shhs')
+toDo3.addToDo()
 
-// // make a class to create to-dos
-// class ToDo {
-//   constructor(title, description, dueDate, priority) {
-//     this.title = title
-//     this.description = description
-//     this.dueDate = dueDate
-//     this.priority = priority
-//   }
-
-//   addToDoToProject(project) {
-//     project.list.push(this)
-//   }
-// }
-
-// // create master project array
-// const projectList = CreateProjectsList();
-
-// // create new project
-// const proj1 = new Project('proj1');
-
-// // add project to master array
-// proj1.addProjectToList()
-
-// // add to do to project
-// const todo1 = new ToDo('bla', 'bla', 'now', 'low')
-// todo1.addToDoToProject(proj1)
-
-// // console.log(projectList.getList());
-
-// console.log(projectList.list[0].list[0].title)
-// console.dir(projectList.list[0].list[0])
+console.log(toDoList.list);
