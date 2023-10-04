@@ -25,19 +25,26 @@ class ToDo {
   }
 }
 
-// create todo array
-// const todoList = CreateToDoArray();
-
 // add to do to project
-const toDo1 = new ToDo('bla', 'bla', 'now', 'low')
-toDo1.addToDo()
+// const toDo1 = new ToDo('bla', 'bla', 'now', 'low')
+// toDo1.addToDo()
 
-const toDo2 = new ToDo('wee', 'qoo', 'woo', 'high')
-toDo2.addToDo()
+// const toDo2 = new ToDo('wee', 'qoo', 'woo', 'high')
+// toDo2.addToDo()
 
-toDo1.deleteToDo(toDo1)
+// toDo1.deleteToDo(toDo1)
 
-const toDo3 = new ToDo('ya', 'yep', 'werw', 'shhs')
-toDo3.addToDo()
+// const toDo3 = new ToDo('ya', 'yep', 'werw', 'shhs')
+// toDo3.addToDo()
 
-console.log(toDoList.list);
+// console.log(toDoList.list);
+
+console.log('test');
+
+const button = document.querySelector('.submit')
+button.addEventListener('click', (e) => {
+  e.preventDefault()
+  console.log('clicked');
+})
+
+
