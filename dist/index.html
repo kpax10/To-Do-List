@@ -13,12 +13,24 @@
   <div class="container">
     <button>+</button>
     <form action="">
-      <label for="to-do">Add Task</label>
-      <input type="text" value="" name="to-do" placeholder="Add a to-do">
-      <label for=""></label>
-      <input type="text" name="" id="">
+
+      <label for="task">Add Task</label>
+      <input type="text" value="" id="task" placeholder="Add a to-do">
+
+      <label for="note">Note</label>
+      <textarea name="" id="note" cols="30" rows="10" placeholder="enter details here..."></textarea>
+
+      <label for="date">Date</label>
+      <input type="date">
+
+      <label for="project">Project</label>
+      <select name="project" id="projects">
+        <option disabled value selected=""></option>
+        <option value="default">Default</option>
+      </select>
 
       <button class="submit">Add to Do</button>
+
     </form>
 
   </div>
