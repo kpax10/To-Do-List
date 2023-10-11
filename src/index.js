@@ -39,12 +39,20 @@ class ToDo {
 
 // console.log(toDoList.list);
 
-console.log('test');
+// console.log('test');
 
 const button = document.querySelector('.submit')
 button.addEventListener('click', (e) => {
   e.preventDefault()
-  console.log('clicked');
+  console.log('submit');
+})
+
+const addNewToDo = document.querySelector('.add-to-do')
+const modal = document.querySelector('.modal')
+addNewToDo.addEventListener('click', (e) => {
+  e.preventDefault()
+  console.log('clicked add button');
+  modal.classList.remove('hidden')
 })
 
 

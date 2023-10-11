@@ -5,34 +5,57 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <script src="main.js" defer></script>
   <title>To Do List</title>
 </head>
 
 <body>
   <div class="container">
-    <button>+</button>
-    <form action="">
 
-      <label for="task">Add Task</label>
-      <input type="text" value="" id="task" placeholder="Add a to-do">
+    <header>
+      <nav>
+        <h1>[ toDo ]</h1>
+      </nav>
+    </header>
 
-      <label for="note">Note</label>
-      <textarea name="" id="note" cols="30" rows="10" placeholder="enter details here..."></textarea>
+    <main>
+      <div class="side-bar">
 
-      <label for="date">Date</label>
-      <input type="date">
+      </div>
+      <div class="task">
+        <button class="add-to-do">+</button>
+        <div class="modal hidden">
+          <form action="">
+            <label for="task">Add Task</label>
+            <input type="text" value="" id="task" placeholder="Add a to-do">
 
-      <label for="project">Project</label>
-      <select name="project" id="projects">
-        <option disabled value selected=""></option>
-        <option value="default">Default</option>
-      </select>
+            <label for="note">Note</label>
+            <textarea name="" id="note" cols="30" rows="3" placeholder="enter details here..."></textarea>
 
-      <button class="submit">Add to Do</button>
+            <label for="date">Date</label>
+            <input type="date">
 
-    </form>
+            <label for="project">Project</label>
+            <select name="project" id="projects">
+              <option disabled selected hidden value=""></option>
+              <option value="default">Default</option>
+            </select>
 
+            <label for="Priority">Priority
+              <select name="priority" id="priority">
+                <option disabled selected hidden value=""></option>
+                <option value="low">Low</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+
+            <button class="submit">Add to Do</button>
+
+          </form>
+        </div>
+      </div>
+    </main>
   </div>
 </body>
 
