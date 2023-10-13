@@ -11,10 +11,11 @@ const toDoList = CreateToDoArray()
 
 // make a class to create to-dos
 class ToDo {
-  constructor(title, description, dueDate, priority) {
-    this.title = title
-    this.description = description
-    this.dueDate = dueDate
+  constructor(task, note, date, project, priority) {
+    this.task = task
+    this.note = note
+    this.date = date
+    this.project = project
     this.priority = priority
   }
   addToDo() {
@@ -53,6 +54,14 @@ addNewToDo.addEventListener('click', (e) => {
   e.preventDefault()
   console.log('clicked add button');
   modal.classList.remove('hidden')
+})
+
+const removeModal = document.querySelector('.cancel')
+const form = document.querySelector('.form')
+removeModal.addEventListener('click', (e) => {
+  e.preventDefault()
+  form.reset()
+  modal.classList.add('hidden')
 })
 
 
