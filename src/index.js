@@ -45,23 +45,41 @@ class ToDo {
 const button = document.querySelector('.submit')
 button.addEventListener('click', (e) => {
   e.preventDefault()
-  console.log('submit');
 })
 
-const addNewToDo = document.querySelector('.add-to-do')
 const modal = document.querySelector('.modal')
+
+const addNewToDo = document.querySelector('.add-to-do')
 addNewToDo.addEventListener('click', (e) => {
   e.preventDefault()
-  console.log('clicked add button');
   modal.classList.remove('hidden')
 })
 
 const removeModal = document.querySelector('.cancel')
 const form = document.querySelector('.form')
 removeModal.addEventListener('click', (e) => {
-  e.preventDefault()
   form.reset()
   modal.classList.add('hidden')
 })
 
+const submitToDo = document.querySelector('.submit')
+submitToDo.addEventListener('click', () => {
+  // add to the array
+  const task = document.querySelector('#task').value
+  const note = document.querySelector('#note').value
+  const date = document.querySelector('#date').value
+  const project = document.querySelector('#project').value
+  const priority = document.querySelector('#priority').value
 
+  console.log('task: ', task, 'note: ', note, 'date: ', date, 'project: ', project, 'priority: ', priority);
+
+  const newToDo = new ToDo(task, note, date, project, priority)
+  newToDo.addToDo()
+
+  console.log(toDoList.list);
+
+
+
+  modal.classList.add('hidden')
+  form.reset()
+})
