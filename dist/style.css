@@ -34,6 +34,14 @@ main {
   position: relative;
 }
 
+.to-do {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+}
+
 .modal {
   background-color: red;
   padding: 1rem;

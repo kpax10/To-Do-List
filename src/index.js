@@ -1,4 +1,4 @@
-import { removeTasks, renderTasks } from './tasks.js';
+import { removeDOMTasks, renderDOMTasks } from './tasks.js';
 
 // make a todo array
 const CreateToDoArray = () => {
@@ -18,6 +18,7 @@ class ToDo {
     this.date = date
     this.project = project
     this.priority = priority
+    this.isComplete = false
   }
   addToDo() {
     toDoList.list.push(this)
@@ -72,15 +73,11 @@ submitToDo.addEventListener('click', () => {
   const project = document.querySelector('#project').value
   const priority = document.querySelector('#priority').value
 
-  // console.log('task: ', task, 'note: ', note, 'date: ', date, 'project: ', project, 'priority: ', priority);
-
   const newToDo = new ToDo(task, note, date, project, priority)
   newToDo.addToDo()
 
-  // console.log(toDoList.list);
-
-  removeTasks()
-  renderTasks()
+  removeDOMTasks()
+  renderDOMTasks()
   modal.classList.add('hidden')
   form.reset()
 })
