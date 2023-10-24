@@ -1,4 +1,5 @@
-import { toDoList } from "./index.js";
+import { indexOf } from "lodash";
+import newToDo, { toDoList } from "./index.js";
 
 export function removeDOMTasks() {
   const tasks = document.querySelector('.tasks')
@@ -19,6 +20,7 @@ export function renderDOMTasks() {
     const date = document.createElement('p')
     const project = document.createElement('p')
     const priority = document.createElement('p')
+    const deleteBtn = document.createElement('button')
 
     task.classList.add('to-do')
     tasks.appendChild(task)
@@ -33,5 +35,18 @@ export function renderDOMTasks() {
       ? project.textContent = `Project: ${element.project}`
       : project.textContent = element.project
     task.append(project)
+
+    deleteBtn.textContent = 'Delete'
+    deleteBtn.classList.add('delete-to-do')
+    task.append(deleteBtn)
+
+    // // create event listener for delete button
+    // deleteBtn.addEventListener('click', () => {
+    //   // const index = Array.from()
+    //   // console.log(deleteBtn);
+    //   // console.log(indexOf(deleteBtn));
+    //   console.log('clicked', deleteBtn.);
+    // })
+
   });
 }

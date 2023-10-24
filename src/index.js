@@ -1,6 +1,11 @@
 import { removeDOMTasks, renderDOMTasks } from './tasks.js';
+// Check local storage
 
-// make a todo array
+// Render Side Bar
+
+// Render main to-do's section
+
+// Create a todo array
 const CreateToDoArray = () => {
   const list = [];
   const getList = () => list;
@@ -10,7 +15,7 @@ const CreateToDoArray = () => {
 
 export const toDoList = CreateToDoArray()
 
-// make a class to create to-dos
+// Create a class to create to-dos
 class ToDo {
   constructor(task, note, date, project, priority) {
     this.task = task
@@ -18,7 +23,6 @@ class ToDo {
     this.date = date
     this.project = project
     this.priority = priority
-    this.isComplete = false
   }
   addToDo() {
     toDoList.list.push(this)
@@ -27,22 +31,6 @@ class ToDo {
     toDoList.list.splice(toDoList.list.indexOf(toDo), 1)
   }
 }
-
-// add to do to project
-// const toDo1 = new ToDo('bla', 'bla', 'now', 'low')
-// toDo1.addToDo()
-
-// const toDo2 = new ToDo('wee', 'qoo', 'woo', 'high')
-// toDo2.addToDo()
-
-// toDo1.deleteToDo(toDo1)
-
-// const toDo3 = new ToDo('ya', 'yep', 'werw', 'shhs')
-// toDo3.addToDo()
-
-// console.log(toDoList.list);
-
-// console.log('test');
 
 const button = document.querySelector('.submit')
 button.addEventListener('click', (e) => {
@@ -81,4 +69,3 @@ submitToDo.addEventListener('click', () => {
   modal.classList.add('hidden')
   form.reset()
 })
-
