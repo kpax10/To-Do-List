@@ -46,10 +46,10 @@ export function deleteToDoListener() {
       const array = Array.from(deleteBtns)
       const index = array.indexOf(element)
 
-      console.log(toDoList.list);
-      console.log(toDoList.list[index]);;
+      // console.log(toDoList.list);
+      // console.log(toDoList.list[index]);;
       toDoList.list.splice(index, 1)
-      console.log(toDoList.list);
+      // console.log(toDoList.list);
 
       removeDOMTasks()
       renderDOMTasks()
