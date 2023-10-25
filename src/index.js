@@ -1,4 +1,4 @@
-import { removeDOMTasks, renderDOMTasks } from './tasks.js';
+import { removeDOMTasks, renderDOMTasks, deleteToDoListener } from './tasks.js';
 // Check local storage
 
 // Render Side Bar
@@ -27,9 +27,9 @@ class ToDo {
   addToDo() {
     toDoList.list.push(this)
   }
-  deleteToDo(toDo) {
-    toDoList.list.splice(toDoList.list.indexOf(toDo), 1)
-  }
+  // deleteToDo(toDo) {
+  //   toDoList.list.splice(toDoList.list.indexOf(toDo), 1)
+  // }
 }
 
 const button = document.querySelector('.submit')
@@ -66,6 +66,8 @@ submitToDo.addEventListener('click', () => {
 
   removeDOMTasks()
   renderDOMTasks()
+  deleteToDoListener()
+
   modal.classList.add('hidden')
   form.reset()
 })

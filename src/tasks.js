@@ -1,5 +1,4 @@
-import { indexOf } from "lodash";
-import newToDo, { toDoList } from "./index.js";
+import { toDoList } from "./index.js";
 
 export function removeDOMTasks() {
   const tasks = document.querySelector('.tasks')
@@ -12,7 +11,6 @@ export function renderDOMTasks() {
   const tasks = document.querySelector('.tasks')
 
   // loop over array, adding each task to the page
-  // console.log('current list: ', toDoList.list);
   toDoList.list.forEach(element => {
     const task = document.createElement('div')
     const taskTitle = document.createElement('h3')
@@ -39,14 +37,23 @@ export function renderDOMTasks() {
     deleteBtn.textContent = 'Delete'
     deleteBtn.classList.add('delete-to-do')
     task.append(deleteBtn)
+  });
+}
+export function deleteToDoListener() {
+  const deleteBtns = document.querySelectorAll('.delete-to-do')
+  deleteBtns.forEach(element => {
+    element.addEventListener('click', () => {
+      const array = Array.from(deleteBtns)
+      const index = array.indexOf(element)
 
-    // // create event listener for delete button
-    // deleteBtn.addEventListener('click', () => {
-    //   // const index = Array.from()
-    //   // console.log(deleteBtn);
-    //   // console.log(indexOf(deleteBtn));
-    //   console.log('clicked', deleteBtn.);
-    // })
+      console.log(toDoList.list);
+      console.log(toDoList.list[index]);;
+      toDoList.list.splice(index, 1)
+      console.log(toDoList.list);
 
+      removeDOMTasks()
+      renderDOMTasks()
+      deleteToDoListener()
+    })
   });
 }
