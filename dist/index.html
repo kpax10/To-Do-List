@@ -24,11 +24,12 @@
       </div>
 
       <div class="task">
-        <button class="add-to-do">+</button>
+        <button class="add-to-do">Add To-Do</button>
+
         <div class="modal hidden">
-          <form action="#" class="form" action="">
+          <form class="form">
             <label for="task">Add Task</label>
-            <input type="text" value="" id="task" placeholder="Add a to-do" required>
+            <input type="text" name="task" id="task" placeholder="Add a to-do" required>
 
             <label for="note">Note</label>
             <textarea name="" id="note" cols="30" rows="3" placeholder="enter details here..."></textarea>
@@ -50,8 +51,10 @@
               </select>
             </label>
 
-            <input class="submit" type="submit" value="Submit">
-            <input class="cancel" type="reset" value="Cancel">
+            <button class="submit" type="submit">Submit</button>
+
+            <!-- <input class="submit" type="submit" value="Submit"> -->
+            <button class="cancel" type="reset">Cancel</button>
 
           </form>
         </div>
