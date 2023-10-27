@@ -132,13 +132,44 @@ function editToDoListener() {
       editProject.value = toDoList.list[index].project
       editPriority.value = toDoList.list[index].priority
       // populate the fields with info from the array item index
-
-      // 
+      editSubmitListener(index, editTask, editNote, editDate, editProject, editPriority)
+      // /FUNCTION listen for edit-submit to be pushed
     })
   });
 }
 
+function editSubmitListener(index, editTask, editNote, editDate, editProject, editPriority) {
+  const editSubmit = document.querySelector('.edit-submit')
+  editSubmit.addEventListener('click', (e) => {
+    e.preventDefault()
+    editToDoList(index, editTask, editNote, editDate, editProject, editPriority)
+    removeDOMTasks()
+    renderDOMTasks()
+    deleteToDoListener()
+    editToDoListener()
+    // repopulate the dom
+    editModal.classList.add('hidden')
+    console.log(toDoList.list);
+  })
+}
 
+function editToDoList(index, editTask, editNote, editDate, editProject, editPriority) {
+  // replace the array item with new object
+  const task = editTask.value
+  const note = editNote.value
+  const date = editDate.value
+  const project = editProject.value
+  const priority = editPriority.value
+
+  const editedToDo = new ToDo(task, note, date, project, priority)
+  toDoList.list[index] = editedToDo
+  console.log(editedToDo);
+  console.log(toDoList.list);
+}
+
+function submitEditToDo() {
+
+}
 
 
 const removeEditModal = document.querySelector('.edit-cancel')
