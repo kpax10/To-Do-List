@@ -42,7 +42,8 @@ main {
   background-color: white;
 }
 
-.modal {
+.modal,
+.edit-modal {
   background-color: red;
   padding: 1rem;
   position: absolute;

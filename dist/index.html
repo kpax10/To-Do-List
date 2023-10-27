@@ -52,9 +52,38 @@
             </label>
 
             <button class="submit" type="submit">Submit</button>
-
-            <!-- <input class="submit" type="submit" value="Submit"> -->
             <button class="cancel" type="reset">Cancel</button>
+
+          </form>
+        </div>
+
+        <div class="edit-modal hidden">
+          <form class="edit-form">
+            <label for="edit-task">Edit Task</label>
+            <input type="text" id="edit-task" placeholder="Add a to-do" required>
+
+            <label for="edit-note">Note</label>
+            <textarea name="" id="edit-note" cols="30" rows="3" placeholder="enter details here..."></textarea>
+
+            <label for="edit-date">Date</label>
+            <input type="date" id="edit-date">
+
+            <label for="edit-project">Project</label>
+            <select name="project" id="edit-project">
+              <option disabled selected hidden value=""></option>
+              <option value="default">Default</option>
+            </select>
+
+            <label for="edit-priority">Priority
+              <select name="priority" id="edit-priority">
+                <option disabled selected hidden value=""></option>
+                <option value="low">Low</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+
+            <button class="edit-submit" type="submit">Edit</button>
+            <button class="edit-cancel" type="reset">Cancel</button>
 
           </form>
         </div>

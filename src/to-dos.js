@@ -22,8 +22,8 @@ class ToDo {
 }
 
 const modal = document.querySelector('.modal')
-
 const addNewToDo = document.querySelector('.add-to-do')
+
 addNewToDo.addEventListener('click', (e) => {
   e.preventDefault()
   modal.classList.remove('hidden')
@@ -31,12 +31,14 @@ addNewToDo.addEventListener('click', (e) => {
 
 const removeModal = document.querySelector('.cancel')
 const form = document.querySelector('.form')
-removeModal.addEventListener('click', (e) => {
+
+removeModal.addEventListener('click', () => {
   form.reset()
   modal.classList.add('hidden')
 })
 
 const submitToDo = document.querySelector('.submit')
+
 submitToDo.addEventListener('click', (e) => {
   e.preventDefault()
   // add to the array
@@ -52,6 +54,7 @@ submitToDo.addEventListener('click', (e) => {
   removeDOMTasks()
   renderDOMTasks()
   deleteToDoListener()
+  editToDoListener()
 
   modal.classList.add('hidden')
   form.reset()
@@ -103,12 +106,51 @@ export function renderDOMTasks() {
   });
 }
 
+const editModal = document.querySelector('.edit-modal')
+
 function editToDoListener() {
-  const editBtns = document.querySelectorAll('edit-to-do')
-  editBtns.addEventListener('click', () => {
-    console.log('edit');
-  })
+  const editBtns = document.querySelectorAll('.edit-to-do')
+  editBtns.forEach(element => {
+    element.addEventListener('click', () => {
+
+      editModal.classList.remove('hidden')
+      // popup modal
+      const array = Array.from(editBtns)
+      const index = array.indexOf(element)
+      // target the index where the item in array is at
+      console.log(index, ' element clicked');
+      console.log(toDoList.list[index]);
+
+      const editTask = document.querySelector('#edit-task')
+      const editNote = document.querySelector('#edit-note')
+      const editDate = document.querySelector('#edit-date')
+      const editProject = document.querySelector('#edit-project')
+      const editPriority = document.querySelector('#edit-priority')
+      editTask.value = toDoList.list[index].task
+      editNote.value = toDoList.list[index].note
+      editDate.value = toDoList.list[index].date
+      editProject.value = toDoList.list[index].project
+      editPriority.value = toDoList.list[index].priority
+      // populate the fields with info from the array item index
+
+      // 
+    })
+  });
 }
+
+
+
+
+const removeEditModal = document.querySelector('.edit-cancel')
+const editForm = document.querySelector('.edit-form')
+
+removeEditModal.addEventListener('click', () => {
+  editForm.reset()
+  editModal.classList.add('hidden')
+})
+
+
+
 
 function deleteToDoListener() {
   const deleteBtns = document.querySelectorAll('.delete-to-do')
@@ -119,6 +161,7 @@ function deleteToDoListener() {
       toDoList.list.splice(index, 1)
       removeDOMTasks()
       renderDOMTasks()
+      editToDoListener()
       deleteToDoListener()
     })
   });
