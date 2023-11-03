@@ -167,11 +167,6 @@ function editToDoList(index, editTask, editNote, editDate, editProject, editPrio
   console.log(toDoList.list);
 }
 
-function submitEditToDo() {
-
-}
-
-
 const removeEditModal = document.querySelector('.edit-cancel')
 const editForm = document.querySelector('.edit-form')
 
@@ -194,6 +189,7 @@ function deleteToDoListener() {
       renderDOMTasks()
       editToDoListener()
       deleteToDoListener()
+      console.log(toDoList.list);
     })
   });
 }
