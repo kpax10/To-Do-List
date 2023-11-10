@@ -156,12 +156,16 @@ function editSubmitListener(index, editTask, editNote, editDate, editProject, ed
 function editToDoList(index, editTask, editNote, editDate, editProject, editPriority) {
   // replace the array item with new object
   const task = editTask.value
+  console.log(task);
   const note = editNote.value
   const date = editDate.value
   const project = editProject.value
   const priority = editPriority.value
 
   const editedToDo = new ToDo(task, note, date, project, priority)
+
+
+  // remove existing todo first?
   toDoList.list[index] = editedToDo
   console.log(editedToDo);
   console.log(toDoList.list);
