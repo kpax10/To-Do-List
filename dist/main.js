@@ -10,9 +10,9 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "removeDOMTasks": () => (/* binding */ removeDOMTasks),
-/* harmony export */   "renderDOMTasks": () => (/* binding */ renderDOMTasks),
-/* harmony export */   "toDoList": () => (/* binding */ toDoList)
+/* harmony export */   removeDOMTasks: () => (/* binding */ removeDOMTasks),
+/* harmony export */   renderDOMTasks: () => (/* binding */ renderDOMTasks),
+/* harmony export */   toDoList: () => (/* binding */ toDoList)
 /* harmony export */ });
 // Create a todo array
 const CreateToDoArray = () => {
