@@ -149,7 +149,6 @@ function editSubmitListener(index, editTask, editNote, editDate, editProject, ed
     editToDoListener()
     // repopulate the dom
     editModal.classList.add('hidden')
-    console.log(toDoList.list);
   })
 }
 
@@ -164,11 +163,9 @@ function editToDoList(index, editTask, editNote, editDate, editProject, editPrio
 
   const editedToDo = new ToDo(task, note, date, project, priority)
 
-
   // remove existing todo first?
+
   toDoList.list[index] = editedToDo
-  console.log(editedToDo);
-  console.log(toDoList.list);
 }
 
 const removeEditModal = document.querySelector('.edit-cancel')
